@@ -1,22 +1,23 @@
 %A.5
 
-function [D] = a5(Dn);
+function [D] = L3A5(Dn)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
-n=-500:500;
+n=-20:20;
 D=Dn;
-t = [-300:300];
+
+t = -300:300;
 w = pi*0.1;
 x=zeros(size(t));
 for i = 1:length(n)
     x= x+D(i)*exp(j*n(i)*w*t);
-    't'
 end
 
-figure(5);
-plot(t, x, 'k');
+figure;
+plot(t, real(x), 'k'); hold on;
 xlabel('t(sec)');
 ylabel('x(t)');
+axis([-300 300 -1 2]);
 title('The reconstructed Fourier Coefficients');
 grid;
